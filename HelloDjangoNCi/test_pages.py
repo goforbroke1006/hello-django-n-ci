@@ -13,5 +13,6 @@ class HelloDjangoNCiTest(TestCase):
         self.assertEqual(200, response.status_code, f'Wrong status code: {response.status_code}')
 
     def test_about_us_page(self):
-        response = self.client.get("/about-us")
-        self.assertEqual(200, response.status_code, f'Wrong status code: {response.status_code}')
+        url = "/about-us"
+        response = self.client.get(url)
+        self.assertEqual(200, response.status_code, f'Page "{url}" has wrong status code: {response.status_code}')
